@@ -1,23 +1,15 @@
 {
-  "name": "meteor-mocha",
-  "version": "0.0.0",
-  "description": "Run Meteor package or app tests with Mocha",
+  "name": "mocha",
+  "version": "0.0.0-semantic-release",
   "repository": {
     "type": "git",
     "url": "https://github.com/meteortesting/meteor-mocha"
   },
-  "scripts": {
-    "lint": "eslint ./package",
-    "publish": "cd package && semantic-release"
-  },
   "author": "Dispatch Technologies, Inc. (http://www.dispatch.me/)",
   "license": "MIT",
-  "devDependencies": {
-    "babel-eslint": "10.1.0",
-    "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.20.1",
-    "semantic-release": "17.2.3",
-    "semantic-release-meteor": "0.0.8"
+  "release": {
+    "verifyConditions": ["semantic-release-meteor", "@semantic-release/github"],
+    "getLastRelease": "semantic-release-meteor",
+    "publish": ["semantic-release-meteor", "@semantic-release/github"]
   }
 }
